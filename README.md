@@ -1,16 +1,15 @@
-```markdown
 <div align="center">
 
 # 📶 WiFi Scanner Pro
-### **Alat Pemindai WiFi Lengkap dengan Fitur Menarik**
+### **Alat Pemindai WiFi untuk Termux (Edukasi & Legal)**
 
 ![Termux](https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Version](https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge)
 
-*Pemindai WiFi dengan visual menarik dan fitur unik untuk Termux*
+*Pemindai jaringan WiFi dengan tampilan visual menarik berbasis Termux API*
 
-[Instalasi](#-instalasi-sekali-klik) • [Fitur](#-fitur-utama) • [Demo](#-demo) • [Penggunaan](#-penggunaan)
+[Instalasi](#-instalasi) • [Fitur](#-fitur-utama) • [Demo](#-demo) • [Penggunaan](#-penggunaan) • [Troubleshooting](#-troubleshooting)
 
 </div>
 
@@ -18,209 +17,127 @@
 
 ## 🎯 Fitur Utama
 
-### 🔍 **Pemindaian WiFi**
-- Deteksi jaringan WiFi terdekat secara real-time
-- Tampilkan SSID, kekuatan sinyal, dan jenis keamanan
-- Analisis kualitas sinyal dengan indikator visual
+### 🔍 Pemindaian WiFi
+- Scan jaringan WiFi di sekitar secara real-time
+- Menampilkan SSID, kekuatan sinyal, dan jenis keamanan
+- Visualisasi sinyal dalam bentuk bar
 
-### ⚡ **Fitur Spesial**
-- **Efek lampu flash** - Flash HP berkedip saat memindai
-- **Tampilan ASCII Art** - Logo keren saat program dijalankan
-- **Indikator sinyal bar** - Visualisasi kekuatan sinyal
-- **Warna terminal** - Interface berwarna dengan Colorama
-- **Efek delay** - Animasi loading untuk pengalaman lebih baik
+### ⚡ Fitur Visual
+- Efek flash LED saat scanning
+- Warna terminal menggunakan Colorama
+- ASCII Art saat aplikasi dijalankan
+- Efek loading & delay
 
-### 🔒 **Keamanan**
-- Hanya untuk tujuan edukasi
-- Tidak menyimpan data sensitif
-- Open source dan transparan
+### 🔒 Keamanan & Etika
+- Hanya untuk edukasi
+- Tidak menyimpan data
+- Bukan alat hacking
+- Tidak bisa membobol WiFi
 
 ---
 
 ## 📸 Demo
 
-**Tampilan saat dijalankan:**
-```
+Contoh output saat dijalankan:
 
----
-
-\ \        / (_)/ |/ |
-  \ \  /\  / / | || |     __ _ _ __
-   \ \/  \/ / | |  | |    / ` | ' \ 
-\  /\  /  | | | | || (| | | | |
-\/  \/   |||  \___\_,|| ||
+\ \        / ()/ |/ | \ \  /\  / / | || |     __ _ _ __ \ /  / / | |  | |    / ` | ' 
+/\  /\  /  | | | | | | | (| | | | /  /  /   ||  ||    _,| |_|
 
 [FLASH BERKEDIP 3x...]
 
-nama wifi: Home-WiFi-5G
-PING SINYAL [||||  ] 4
-Keamanan wifi [WPA2-PSK]
-password : ********
+Nama WiFi : Home-WiFi-5G Sinyal    : [||||  ] 4 Keamanan  : WPA2-PSK Password  : ********
 
-nama wifi: Cafe_Free
-PING SINYAL [||    ] 2
-Keamanan wifi [OPEN]
-password : ********
-
-```
+Nama WiFi : Cafe_Free Sinyal    : [||    ] 2 Keamanan  : OPEN Password  : ********
 
 ---
 
-## 🚀 Instalasi Sekali Klik
+## 🚀 Instalasi
 
-**Salin semua kode di bawah ini dan paste di Termux:**
+### Install kebutuhan
 
-```bash
-# Update & install dependencies
-pkg update && pkg upgrade -y
-pkg install python3 git -y
-pip install colorama
+pkg update && pkg upgrade -y pkg install python3 git termux-api -y pip install colorama termux-setup-storage
 
-# Install Termux API
-pkg install termux-api -y
-termux-setup-storage
+### Clone repository
 
-# Download WiFi Scanner
-git clone https://github.com/agusjawirtechid/WifiScan.git
-cd WifiScan
+git clone https://github.com/agusjawirtechid/WifiScan.git cd WifiScan
 
-# Jalankan program
+### Jalankan
+
 python3 app.py
-```
-
-Atau instal dengan satu command:
-
-```bash
-curl -s https://raw.githubusercontent.com/agusjawirtechid/WifiScan/main/install.sh | bash
-```
 
 ---
 
-📖 Penggunaan
+## 📖 Penggunaan
 
-Menjalankan Program
+Saat program dijalankan:
+1. ASCII art muncul
+2. Flash LED berkedip
+3. Scan WiFi dimulai
+4. Data WiFi ditampilkan (SSID, sinyal, keamanan)
 
-```bash
-cd WifiScan
-python3 app.py
-```
-
-Apa yang Terjadi?
-
-1. ✅ Logo ASCII ditampilkan
-2. ⚡ Flash HP berkedip 3x sebagai indikator
-3. 📡 Pemindaian WiFi dimulai
-4. 📊 Hasil ditampilkan dengan:
-   · Nama WiFi (SSID)
-   · Kekuatan sinyal (bar visual)
-   · Jenis keamanan
-   · Placeholder password
-
-Fitur Interaktif
-
-Program akan meminta input untuk "memilih WiFi", tetapi ini adalah Easter Egg edukasi yang mengingatkan tentang keamanan jaringan.
+Input pemilihan WiFi hanya simulasi edukasi.
 
 ---
 
-🛠️ Teknologi yang Digunakan
+## 🛠️ Teknologi
 
-· Python 3 - Bahasa pemrograman utama
-· Termux API - Akses hardware Android
-· Colorama - Warna terminal
-· JSON - Parsing data WiFi
-· Subprocess - Eksekusi command Termux
-
----
-
-📁 Struktur Kode
-
-```python
-# Fitur utama dalam kode:
-1. termux-wifi-scaninfo    # Memindai jaringan WiFi
-2. termux-torch on/off     # Kontrol flash LED
-3. JSON parsing            # Analisis data WiFi
-4. RSSI to signal bar      # Konversi sinyal ke visual
-5. Colorama formatting     # Warna terminal
-6. Interactive input       # Fitur interaktif
-```
+- Python 3
+- Termux API
+- Colorama
+- JSON
+- Subprocess
 
 ---
 
-⚠️ Penting!
+## 📁 Fitur Kode
 
-INI BUKAN HACKING TOOL!
-
-· ❌ Tidak bisa hack password WiFi
-· ❌ Tidak bisa crack jaringan
-· ❌ Tidak menyimpan data pribadi
-· ✅ Hanya alat pemindai legal
-· ✅ Untuk edukasi keamanan jaringan
-· ✅ Belajar Python & Termux API
-
-Pesan dari program:
-
-```
-"Mana bisa tolol😂😂"
-```
-
-← Ini adalah pengingat humor bahwa keamanan WiFi itu serius dan tidak bisa dibobol semudah itu!
+termux-wifi-scaninfo termux-torch on/off JSON parsing RSSI to signal bar Colorama output Interactive input
 
 ---
 
-🔧 Troubleshooting
+## ⚠️ Penting
 
-Masalah: "Wifi tidak ditemukan"
+INI BUKAN TOOLS HACKING
 
-```bash
-# Solusi 1: Install Termux API
-pkg install termux-api -y
+- Tidak bisa hack WiFi
+- Tidak bisa crack password
+- Tidak mengambil data pribadi
+- Hanya untuk edukasi
 
-# Solusi 2: Beri izin
-termux-wifi-scaninfo
+Pesan humor dari program:
 
-# Solusi 3: Restart Termux
-exit
-# Buka Termux lagi
-```
-
-Masalah: "Command not found"
-
-```bash
-pkg update
-pkg install termux-tools termux-api
-```
+Mana bisa tolol😂😂
 
 ---
 
-🤝 Kontribusi
+## 🔧 Troubleshooting
 
-Ingin menambah fitur?
+WiFi tidak terdeteksi:
 
-1. Fork repository
-2. Buat branch baru
-3. Commit perubahan
-4. Push ke branch
-5. Buat Pull Request
+pkg install termux-api -y termux-wifi-scaninfo
+
+Command tidak ditemukan:
+
+pkg update pkg install termux-tools termux-api
 
 ---
 
-📄 License
+## 🤝 Kontribusi
+
+Fork → Branch → Commit → Push → Pull Request
+
+---
+
+## 📄 License
 
 MIT License © 2024 Agus Jawir Tech ID
 
 ---
 
-👤 Author
+## 👤 Author
 
 Agus Jawir Tech ID
 
 ---
 
-<div align="center">
-
-🌟 Jangan lupa kasih star jika project ini membantu!
-
-🔔 Pantau untuk update fitur baru!
-
-</div>
-```
+🌟 Jangan lupa kasih star jika membantu!
